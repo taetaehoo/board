@@ -12,11 +12,10 @@
 }
 
 .title {
-    flex: 5;
-    
+    flex: var(--title_flex_ratio);
 }
 
 .writer, .dated, .hit {
-    flex: 1;
+    flex: var(--remnant_flex_ratio);
     text-align: center;
 }

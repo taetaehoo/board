@@ -4,19 +4,21 @@
     align-items: center;
     width: 100%;
     height: auto;
-    border-top: 1px solid black;
+    border-top: var(--qna_board_under_bar_border);
+
+    margin-top: -4vh;
 }
 
 .title {
-    flex: 5;
+    flex: var(--title_flex_ratio);
     text-align: center;
     background-color: white;
-    border-bottom: 1px solid black;
+    border-bottom: var(--qna_board_under_bar_border);
 }
 
 .writer, .dated, .hit {
-    flex: 1;
+    flex: var(--remnant_flex_ratio);
     text-align: center;
     background-color: white;
-    border-bottom: 1px solid black;
+    border-bottom: var(--qna_board_under_bar_border);
 }
