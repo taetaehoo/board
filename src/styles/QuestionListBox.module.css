@@ -1,0 +1,22 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    border-top: 1px solid black;
+}
+
+.title {
+    flex: 5;
+    text-align: center;
+    background-color: white;
+    border-bottom: 1px solid black;
+}
+
+.writer, .dated, .hit {
+    flex: 1;
+    text-align: center;
+    background-color: white;
+    border-bottom: 1px solid black;
+}

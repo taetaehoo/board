@@ -1,0 +1,22 @@
+.li {
+    display: flex;
+    flex-direction: row;
+    border-bottom: 1px solid black;
+    padding: 5px 0;
+}
+
+.li:hover {
+    background-color: salmon;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+.title {
+    flex: 5;
+    
+}
+
+.writer, .dated, .hit {
+    flex: 1;
+    text-align: center;
+}
