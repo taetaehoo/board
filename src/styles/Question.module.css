@@ -1,22 +1,42 @@
+@font-face {
+    font-family: 'GmarketSansMedium';
+    src: url('../../public/GmarketSansOTF/GmarketSansMedium.otf') format('opentype');
+  }
+
 .li {
     display: flex;
+
+    height: 5vh;
+
     flex-direction: row;
     border-bottom: 1px solid black;
     padding: 5px 0;
 }
 
 .li:hover {
-    background-color: salmon;
+    background-color: lavender;
     transition: 0.5s;
     cursor: pointer;
 }
 
 .title {
     flex: 5;
-    
+
+    padding-top: 15px;
+    padding-left: 10px;
+
+    font-size: 20px;
+    font-family: 'GmarketSansMedium';
 }
 
 .writer, .dated, .hit {
     flex: 1;
+
     text-align: center;
+
+    padding-top: 15px;
+    padding-left: 5px;
+
+    font-size: 20px;
+    font-family: 'GmarketSansMedium';
 }
