@@ -20,14 +20,16 @@
 }
 
 .title {
-<<<<<<< HEAD
     flex: var(--title_flex_ratio);
+    padding-top: 15px;
+    padding-left: 10px;
+
+    font-size: 20px;
+    font-family: 'GmarketSansMedium';
 }
 
 .writer, .dated, .hit {
     flex: var(--remnant_flex_ratio);
-=======
-    flex: 5;
 
     padding-top: 15px;
     padding-left: 10px;
@@ -37,9 +39,7 @@
 }
 
 .writer, .dated, .hit {
-    flex: 1;
-
->>>>>>> c49004a8ce21beecf470e0731bf31d2fb97de8d2
+    flex: var(--remnant_flex_ratio);
     text-align: center;
 
     padding-top: 15px;
