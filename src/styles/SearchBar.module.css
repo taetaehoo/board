@@ -1,18 +1,22 @@
 .searchBar {
-    width: 16vw;
-    height: 10vh;
+    width: 15vw;
+    height: 5vh;
 
-    margin-left: 78vw;
-    margin-top: 5vh;
+    margin-left: 75vw;
+    margin-top: 3vh;
+
+    border: var(--qna_board_under_bar_border);
 }
 
 .textField {
-    width: 12vw;
-    height: 10vh;
-    
-    font-size: 16px;
-    border: var(--searchBar_border);
-    border-right: none;
+    display: inline-block;
+
+    width: 11vw;
+    height: 5vh;
+    font-size: 17px;
+
+    border: none;
+    border-right: var(--qna_board_under_bar_border);
 }
 
 .textField::placeholder {
@@ -20,15 +24,20 @@
 }
 
 .searchBtn {
-    width: 3vw;
-    height: calc(10.5vh - 0.5px);
+    display: inline-block;
 
-    border: var(--searchBar_border);
+    width: 20%;
+    height: 5vh;
+
+    margin-left: 3%;
+    font-size: 16px;
+
+    border: none;
+
     background-color: white;
 }
 
 .searchBtn:hover {
     cursor: pointer;
-    background-color: gray;
     transition: 0.5s;
 }

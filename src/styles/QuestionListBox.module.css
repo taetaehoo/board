@@ -12,9 +12,11 @@
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    height: auto;
+    height: 5vh;
     min-height: 3vh;
     border-top: var(--qna_board_under_bar_border);
+    border-bottom: var(--qna_board_under_bar_border);
+    font-size: 20px;
 
     margin-top: -8vh;
 }
@@ -23,12 +25,10 @@
     flex: var(--title_flex_ratio);
     text-align: center;
     background-color: white;
-    border-bottom: var(--qna_board_under_bar_border);
 }
 
 .writer, .dated, .hit {
     flex: var(--remnant_flex_ratio);
     text-align: center;
     background-color: white;
-    border-bottom: var(--qna_board_under_bar_border);
 }

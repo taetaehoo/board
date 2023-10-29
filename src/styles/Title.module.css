@@ -1,0 +1,11 @@
+.title {
+    display: inline-block;
+
+    margin-top: 8vh;
+    margin-left: 10vw;
+
+    width: 73%;
+
+    font-size: 50px;
+    font-weight: bold;
+}

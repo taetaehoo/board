@@ -26,7 +26,7 @@ function QuestionListBox() {
     <>
     <div className={styles.container}>
         {contentList.map(content => (
-            <div className={content.css}><p>{content.title}</p></div>
+            <div className={content.css} key={content.title}><p>{content.title}</p></div>
         ))}
 
             

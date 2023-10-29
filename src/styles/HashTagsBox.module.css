@@ -1,0 +1,25 @@
+.container {
+    width: 100%;
+    height: 2vh;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+.hashTagBox {
+    width: 80%;
+    height: 100%;
+    display: flex;
+    overflow: hidden;
+}
+
+.hashTag {
+    padding-right: 3px;
+    font-size: 12px;
+    font-weight: lighter;
+}
+
+.likes {
+    font-size: 12px;
+    
+}

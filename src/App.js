@@ -1,11 +1,14 @@
+import { Route, Switch } from 'react-router-dom';
 import './App.css';
-import Board from './components/Board';
+import MainPage from './pages/MainPage';
+import QnADetailPage from './pages/QnADetailPage';
 
 function App() {
   return (
-    <>
-       <Board />
-    </>
+    <Switch>
+      <Route path='/qna/detail/:id' component={QnADetailPage}></Route>
+      <Route path='/' component={MainPage}></Route>
+    </Switch>
   );
 }
 

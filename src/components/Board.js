@@ -3,11 +3,12 @@ import styles from '../styles/Board.module.css'
 import QuestionListBox from './QuestionListBox'
 import SortList from './SortList'
 import SearchBar from './SearchBar'
+import Title from './Title'
 
 function Board() {
   return (
     <>
-      <SortList />
+      <Title/> <SortList />
       
       <div className={styles.mainBackGround}>
         <QuestionListBox />
