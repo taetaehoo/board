@@ -1,0 +1,19 @@
+.WriteBoard {
+  width: 80vw;
+  height: 100%;
+  margin: 10vh auto 0;
+
+  border: none;
+}
+
+.Line {
+  width: 100%;
+  height: 2vh;
+
+  border-bottom: 1px solid black;
+}
+
+.Line2 {
+  width: 100%;
+  height: 2vh;
+}

@@ -1,0 +1,16 @@
+.content {
+  display: flex;
+
+  padding-left: 1vw;
+  padding-top: 1vh;
+
+  height: 65vh;
+  width: 100%;
+
+  font-size: 40px;
+
+  border-radius: 20px;
+  border: none;
+
+  background-color: lavender;
+}
