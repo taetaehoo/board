@@ -5,7 +5,7 @@
     margin-left: 75vw;
     margin-top: 3vh;
 
-    border: 1px solid black;
+    border: var(--qna_board_under_bar_border);
 }
 
 .textField {
@@ -30,7 +30,7 @@
 
     width: 20%;
     height: 5vh;
-    
+
     margin-left: 3%;
     font-size: 16px;
 

@@ -1,0 +1,11 @@
+.container {
+    width: 100%;
+    height: auto;
+}
+
+.contentBox {
+    width: 100%;
+    height: auto;
+    margin-top: 1vh;
+    margin-bottom: 2vh; 
+}

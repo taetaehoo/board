@@ -1,0 +1,14 @@
+.contentBox {
+    background: pink;
+    margin: 0 auto;
+    width: 80vw;
+    height: 90vh;
+
+    margin-top: 5vh;
+}
+
+.hr {
+    border: none;
+    height: 2px;
+    background-color: black;
+}

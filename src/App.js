@@ -1,10 +1,13 @@
+import { Route, Switch } from 'react-router-dom';
 import './App.css';
-import Board from './components/Board';
-import WriteBoard from './components/WriteBoard';
+import MainPage from './pages/MainPage';
+import QnADetailPage from './pages/QnADetailPage';
 
 function App() {
   return (
-    <WriteBoard />
+    <>
+       <Board />
+    </>
   );
 }
 

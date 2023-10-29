@@ -16,7 +16,7 @@ function SortList() {
   return (
     <select className={styles.selectBox}>
       {options.map(option => (
-        <option value={option.value} className={styles.optionStyle}>{option.name}</option>
+        <option value={option.value} key={option.value} className={styles.optionStyle}>{option.name}</option>
       ))}
     </select>
   )
