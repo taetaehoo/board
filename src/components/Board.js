@@ -4,7 +4,6 @@ import QuestionListBox from './QuestionListBox'
 import SortList from './SortList'
 import SearchBar from './SearchBar'
 import Title from './Title'
-import Title from './Title'
 import WriteButton from './WriteButton'
 
 function Board() {

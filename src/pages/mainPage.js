@@ -1,9 +1,10 @@
 import React from 'react'
+import Board from '../components/Board'
 
-function mainPage() {
+function MainPage() {
   return (
     <Board />
   )
 }
 
-export default mainPage
+export default MainPage
