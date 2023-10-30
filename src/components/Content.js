@@ -4,6 +4,7 @@ import QnAContentHeader from './QnAContentHeader'
 import QnAContentBox from './QnAContentBox'
 import WriteContent from './WriteContent'
 import Comments from './Comments'
+import WriteButton from './WriteButton'
 
 const contents = {
     qnaId : 1,
@@ -71,6 +72,22 @@ const contents = {
             commentContent: "참고로 단일 책임 원칙은 한 클래스가 하나의 역할만을 수행해야한다는 것인데 그것을 가장 큰 이유로 한 클래스 파일에는 하나의 클래스만 담도록 하는 것이에요",
             commentLiked: 13,
             commentParent: 2
+        },
+        {
+            commentId: 7,
+            commentAuthor: "냠이",
+            commentDated: "2023.10.31 18:46:11",
+            commentContent: "참고로 는 것인데 그것을 가장 큰 이유로 한 클래스 파일에는 하나의 클래스만 담도록 하는 것이에요",
+            commentLiked: 2,
+            commentParent: 4
+        },
+        {
+            commentId: 8,
+            commentAuthor: "장원영",
+            commentDated: "2023.12.25 17:02:59",
+            commentContent: "다이브 최 고",
+            commentLiked: 100000,
+            commentParent: null
         }
     ]
 }
@@ -85,7 +102,7 @@ function Content() {
 
         <hr className={styles.hr}></hr>
 
-        <WriteContent id={2}/>
+        <WriteContent id={2}/> <WriteButton id={1}/>
 
         <hr className={styles.hr}></hr>
         <Comments comments={contents.comments}/>

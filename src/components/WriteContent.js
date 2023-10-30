@@ -8,7 +8,7 @@ function WriteContent({id}) {
 
   return(
     <div>
-      <input type='text' placeholder={placeHolderText} className={className}/>
+      <textarea placeholder={placeHolderText} className={className} rows="10"/>
     </div>
   )
 }

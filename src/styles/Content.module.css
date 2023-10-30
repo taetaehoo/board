@@ -1,8 +1,7 @@
 .contentBox {
-    background: pink;
     margin: 0 auto;
     width: 80vw;
-    height: 90vh;
+    height: 100%;
 
     margin-top: 5vh;
 }
@@ -11,4 +10,6 @@
     border: none;
     height: 2px;
     background-color: black;
+
+    margin: 1vh 0;
 }

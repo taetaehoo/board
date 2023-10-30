@@ -1,9 +1,9 @@
 .searchBar {
-    width: 15vw;
+    width: 20vw;
     height: 5vh;
 
-    margin-left: 75vw;
-    margin-top: 3vh;
+    margin: 3vh 0;
+    margin-left: 68vw;
 
     border: var(--qna_board_under_bar_border);
 }
@@ -11,7 +11,7 @@
 .textField {
     display: inline-block;
 
-    width: 11vw;
+    width: 15vw;
     height: 5vh;
     font-size: 17px;
 
