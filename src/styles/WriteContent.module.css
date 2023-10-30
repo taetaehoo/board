@@ -14,3 +14,21 @@
 
   background-color: lavender;
 }
+
+.WriteContent {
+  display: flex;
+
+  padding-left: 1vw;
+  padding-top: 1vh;
+
+  height: 30vh;
+  width: 95%;
+
+  font-size: 40px;
+
+  border-radius: 20px;
+  border: none;
+
+  background-color: lavender;
+  margin: 0 auto;
+}
