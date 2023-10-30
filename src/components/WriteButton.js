@@ -7,7 +7,7 @@ function WriteButton({id}) {
 
   const locate = () => {
     if (id === 2) {
-      history.push(`/qna/write`)
+      history.push(`/question/add`)
     }
     else if (id === 3) {
       alert('글 작성이 완료되었습니다.')

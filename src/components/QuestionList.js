@@ -4,7 +4,7 @@ import Question from './Question'
 
 const contents = [
     {
-        qnaId: 1,
+        Id: 1,
         title: '뭐가 문제인지 모르겠어요',
         writer: '삼색이',
         dated: '2023.09.02',
@@ -12,7 +12,7 @@ const contents = [
         numOfComments: 0,
     },
     {
-        qnaId: 2,
+        Id: 2,
         title: '이거 왜 에러남?',
         writer: '도도',
         dated: '2023.09.02',
@@ -20,7 +20,7 @@ const contents = [
         numOfComments: 2
     },
     {
-      qnaId: 3,
+      Id: 3,
       title: '코드 좀 봐주세요',
       writer: '도레미',
       dated: '2023.09.02',
@@ -28,7 +28,7 @@ const contents = [
       numOfComments: 4
   },
   {
-    qnaId: 4,
+    Id: 4,
     title: '안녕하세요. 질문 있습니다.',
     writer: '안녕',
     dated: '2023.09.02',
@@ -36,7 +36,7 @@ const contents = [
     numOfComments: 1
 },
 {
-  qnaId: 5,
+  Id: 5,
   title: '살려줘',
   writer: '글쓴애',
   dated: '2023.09.02',
@@ -44,7 +44,7 @@ const contents = [
   numOfComments: 5
 },
 {
-  qnaId: 6,
+  Id: 6,
   title: '코린이 도와줘용',
   writer: '게시판',
   dated: '2023.09.02',
@@ -52,7 +52,7 @@ const contents = [
   numOfComments: 5
 },
 {
-  qnaId: 7,
+  Id: 7,
   title: '얘가 말을 안 들어요',
   writer: '복숭아',
   dated: '2023.09.02',
@@ -60,7 +60,7 @@ const contents = [
   numOfComments: 2
 },
 {
-  qnaId: 8,
+  Id: 8,
   title: '아니 이게 왜 어디서 문제인거임?',
   writer: '딸기',
   dated: '2023.09.02',
@@ -68,7 +68,7 @@ const contents = [
   numOfComments: 1
 },
 {
-  qnaId: 9,
+  Id: 9,
   title: '질문',
   writer: '고양이',
   dated: '2023.09.02',
@@ -76,7 +76,7 @@ const contents = [
   numOfComments: 0
 },
 {
-  qnaId: 10,
+  Id: 10,
   title: '파이썬 어려웡',
   writer: '강아지',
   dated: '2023.09.02',
@@ -89,7 +89,7 @@ function QuestionList() {
   return (
     <ul className={styles.ul}>
       {contents.map(content => (
-        <Question key={content.qnaId} {...content}/>
+        <Question key={content.Id} {...content}/>
       ))}
     </ul>
   )

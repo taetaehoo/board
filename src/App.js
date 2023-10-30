@@ -8,8 +8,8 @@ function App() {
   return (
     <Switch>
        <Route exact path='/' component={MainPage}></Route>
-       <Route exact path='/qna/write' component={WritePage}></Route>
-       <Route path='/qna/detail/:id' component={QnADetailPage}></Route>
+       <Route exact path='/question/add' component={WritePage}></Route>
+       <Route path='/question/:Id' component={QnADetailPage}></Route>
     </Switch>
   );
 }

@@ -2,7 +2,7 @@ import React from 'react'
 import Content from '../components/Content'
 
 const contents = {
-    qnaId : 1,
+    Id : 1,
     title: "OOP 질문",
     author: "코린이",
     dated: "2023.09.02",

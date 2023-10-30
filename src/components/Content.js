@@ -7,7 +7,7 @@ import Comments from './Comments'
 import WriteButton from './WriteButton'
 
 const contents = {
-    qnaId : 1,
+    Id : 1,
     title: "OOP 질문",
     author: "코린이",
     dated: "2023.09.02",
