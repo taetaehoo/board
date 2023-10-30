@@ -11,6 +11,8 @@
     flex-direction: row;
     border-bottom: 1px solid black;
     padding: 5px 0;
+    margin-top: -2px;
+    padding-bottom: 12px;
 }
 
 .li:hover {
@@ -21,16 +23,6 @@
 
 .title {
     flex: var(--title_flex_ratio);
-    padding-top: 15px;
-    padding-left: 10px;
-
-    font-size: 20px;
-    font-family: 'GmarketSansMedium';
-}
-
-.writer, .dated, .hit {
-    flex: var(--remnant_flex_ratio);
-
     padding-top: 15px;
     padding-left: 10px;
 

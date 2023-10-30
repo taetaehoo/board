@@ -19,3 +19,18 @@
   cursor: pointer;
   transition: 0.5s;
 }
+
+.EnrollButton {
+  margin-top: 0.5vh;
+  margin-left: 68vw;
+  height: 5vh;
+  width: 10vw;
+
+  font-size: 20px;
+
+  font-family: 'GmarketSansMedium';
+
+  background-color: white;
+  border: none;
+  border: 1px solid black;
+}
