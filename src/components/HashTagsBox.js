@@ -11,9 +11,6 @@ function HashTagsBox({likes, ...hashtags}) {
                 <p key={tag.tagId} className={styles.hashTag}>#{tag.tagName}</p>
             ))}
       </div>
-
-
-
       <p className={styles.likes}>{likes}</p>
     </div>
   )

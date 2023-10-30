@@ -1,9 +1,9 @@
-.WriteButtonDiv {
+.ImageButtonDiv {
   display: inline-block;
 }
-
-.WriteButton {
-  margin-left: 0.5vw;
+.ImageButton {
+  margin-top: 2vh;
+  margin-left: 76vw;
 
   height: 5vh;
   width: 7vw;
@@ -15,7 +15,7 @@
   border: 1px solid black;
 }
 
-.WriteButton:hover {
+.ImageButton:hover {
   cursor: pointer;
   transition: 0.5s;
 }

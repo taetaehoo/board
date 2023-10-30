@@ -6,7 +6,7 @@ const placeHolderText = '내용을 입력해주세요.';
 function WriteContent() {
   return(
     <div>
-      <input type='text' placeholder={placeHolderText} className={styles.content}/>
+      <textarea placeholder={placeHolderText} className={styles.content} rows="10"/>
     </div>
   )
 }

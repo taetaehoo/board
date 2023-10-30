@@ -3,7 +3,9 @@ import Board from '../components/Board'
 
 function MainPage() {
   return (
-    <Board />
+    <>
+        <Board/>
+    </>
   )
 }
 

@@ -2,6 +2,7 @@ import React from 'react'
 import styles from '../styles/Content.module.css'
 import QnAContentHeader from './QnAContentHeader'
 import QnAContentBox from './QnAContentBox'
+import CommentBox from './CommentBox'
 
 const contents = {
     qnaId : 1,
@@ -82,6 +83,9 @@ function Content() {
         <QnAContentBox content={contents.content} liked={contents.likes} hashtags={contents.hashtags}/>
 
         <hr className={styles.hr}></hr>
+    <CommentBox />
+    <hr className={styles.hr}/>
+    <Content />
     </div>
   )
 }

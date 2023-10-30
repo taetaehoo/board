@@ -32,7 +32,7 @@ const contents = {
             commentId: 2,
             commentAuthor: "코등이",
             commentDated: "2023.09.01 18:06:55",
-            commentContent: "결론만 말하자면 가장 큰 이뉴는 단일 책임 원칙을 기초로 하기 때문이에요",
+            commentContent: "결론만 말하자면 가장 큰 이유는 단일 책임 원칙을 기초로 하기 때문이에요",
             commentLiked: 0,
             commentParent: null
         },
@@ -40,7 +40,7 @@ const contents = {
             commentId: 3,
             commentAuthor: "삼색이",
             commentDated: "2023.09.01 18:11:35",
-            commentContent: "멋지다 코린아 ~ 코리낭 파이팅!",
+            commentContent: "멋지다 코린아 ~ 코린이 파이팅!",
             commentLiked: 0,
             commentParent: null
         },
