@@ -3,14 +3,18 @@ import './App.css';
 import MainPage from './pages/MainPage';
 import QnADetailPage from './pages/QnADetailPage';
 import WritePage from './pages/writePage';
+import Header from './components/Header';
 
 function App() {
   return (
-    <Switch>
-       <Route exact path='/' component={MainPage}></Route>
-       <Route exact path='/question/add' component={WritePage}></Route>
-       <Route path='/question/:Id' component={QnADetailPage}></Route>
-    </Switch>
+    <>
+    <Header/>
+      <Switch>
+        <Route exact path='/' component={MainPage}></Route>
+        <Route exact path='/question/add' component={WritePage}></Route>
+        <Route path='/question/:Id' component={QnADetailPage}></Route>
+      </Switch>
+    </>
   );
 }
 

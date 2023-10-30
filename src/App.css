@@ -6,3 +6,7 @@
 ul, li, ol {
   list-style: none;
 }
+
+img {
+  object-fit: scale-down;
+}
