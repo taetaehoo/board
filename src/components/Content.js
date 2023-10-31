@@ -5,94 +5,35 @@ import QnAContentBox from './QnAContentBox'
 import WriteContent from './WriteContent'
 import Comments from './Comments'
 import WriteButton from './WriteButton'
-
-const contents = {
-    Id : 1,
-    title: "OOP 질문",
-    author: "코린이",
-    dated: "2023.09.02",
-    hit: 29,
-    content: "객체 지향에서는 왜 한 클래스 파일에는 한 클래스만 작성해야 한다는 것을 고수하나요?",
-    hashtags: [
-        {
-            tagId: 1,
-            tagName: "OOP"
-        },
-        {
-            tagId: 2,
-            tagName: "객체지향"
-        }
-    ],
-    likes: 128,
-    comments: [
-        {
-            commentId: 1,
-            commentAuthor: "챗봇",
-            commentDated: "2023.09.01 18:02:24",
-            commentContent: "객체 지향 프로그래밍에서는 한 클래스 파일에는 일반적으로 한 클래스만 작성하는 것은 코드의 구조화, 유지 보수성, 가독성, 디버깅, 재사용성 등 다양한 이유로 권장됩니다.",
-            commentLiked: 0,
-            commentParent: null
-        },
-        {
-            commentId: 2,
-            commentAuthor: "코등이",
-            commentDated: "2023.09.01 18:06:55",
-            commentContent: "결론만 말하자면 가장 큰 이뉴는 단일 책임 원칙을 기초로 하기 때문이에요",
-            commentLiked: 0,
-            commentParent: null
-        },
-        {
-            commentId: 3,
-            commentAuthor: "삼색이",
-            commentDated: "2023.09.01 18:11:35",
-            commentContent: "멋지다 코린아 ~ 코리낭 파이팅!",
-            commentLiked: 0,
-            commentParent: null
-        },
-        {
-            commentId: 4,
-            commentAuthor: "삼다수",
-            commentDated: "2023.09.01 18:29:01",
-            commentContent: "챗봇 신기행",
-            commentLiked: 0,
-            commentParent: null
-        },
-        {
-            commentId: 5,
-            commentAuthor: "에스파",
-            commentDated: "2023.09.01 17:02:59",
-            commentContent: "광 야 최 고",
-            commentLiked: 0,
-            commentParent: null
-        },
-        {
-            commentId: 6,
-            commentAuthor: "냠냠이",
-            commentDated: "2023.09.01 18:46:11",
-            commentContent: "참고로 단일 책임 원칙은 한 클래스가 하나의 역할만을 수행해야한다는 것인데 그것을 가장 큰 이유로 한 클래스 파일에는 하나의 클래스만 담도록 하는 것이에요",
-            commentLiked: 13,
-            commentParent: 2
-        },
-        {
-            commentId: 7,
-            commentAuthor: "냠이",
-            commentDated: "2023.10.31 18:46:11",
-            commentContent: "참고로 는 것인데 그것을 가장 큰 이유로 한 클래스 파일에는 하나의 클래스만 담도록 하는 것이에요",
-            commentLiked: 2,
-            commentParent: 4
-        },
-        {
-            commentId: 8,
-            commentAuthor: "장원영",
-            commentDated: "2023.12.25 17:02:59",
-            commentContent: "다이브 최 고",
-            commentLiked: 100000,
-            commentParent: null
-        }
-    ]
-}
+import { useEffect, useState } from 'react'
+import axiosInstance from '../utils/apis'
+import { useParams } from 'react-router-dom'
 
 function Content() {
+
+  const {Id} = useParams();
+
+    const [contents, setContents] = useState([]);
+    const [comms, setComments] = useState([]);
+
+  useEffect(() => {
+
+    axiosInstance.get(`/question/${Id}`)
+      .then(response => {
+        setContents(response.data);
+      })
+      .then(() => {
+        axiosInstance.get(`/api/posts/${Id}`)
+        .then(resp => {
+          setComments(resp.data);
+        })
+      })
+      
+      .catch(error => {
+        console.error('데이터를 불러오는 중 오류 발생 : ', error);
+      });
+  }, []);
+
   return (
     <div className={styles.contentBox}>
       <QnAContentHeader title={contents.title} author={contents.author} dated={contents.dated} hit={contents.hit}/>
@@ -105,7 +46,7 @@ function Content() {
         <WriteContent id={2}/> <WriteButton id={1}/>
 
         <hr className={styles.hr}></hr>
-        <Comments comments={contents.comments}/>
+        <Comments comments={comms}/>
     </div>
   )
 }
