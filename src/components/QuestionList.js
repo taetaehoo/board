@@ -9,19 +9,20 @@ function QuestionList() {
   useEffect(() => {
 
     axiosInstance.get("/question")
-      .then(response => {
-        setContents(response.data);
-      })
-      
-      .catch(error => {
-        console.error('데이터를 불러오는 중 오류 발생 : ', error);
-      });
-  }, []);
+     .then(response => {
+       setContents(response.data.content);
+       console.log(response.data.content)
+     })
+     
+     .catch(error => {
+       console.error('데이터를 불러오는 중 오류 발생 : ', error);
+     });
+ }, []);
 
   return (
     <ul className={styles.ul}>
       {contents.map(content => (
-        <Question key={content.Id} {...content} />
+        <Question key={content.id} {...content} />
       ))}
     </ul>
   );

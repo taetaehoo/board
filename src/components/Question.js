@@ -2,15 +2,15 @@ import React from 'react'
 import styles from '../styles/Question.module.css'
 import { useHistory } from 'react-router-dom'
 
-function Question({Id, title, writer, dated, hit, numOfComments}) {
+function Question({id, title, writer, createDate, likes, views}) {
   const history = useHistory();
 
   return (
-    <li key={Id} className={styles.li} onClick={() => history.push(`/question/${Id}`)}>
-      <div className={styles.title}>{title} {numOfComments !== 0 ? `[${numOfComments}]` : ''}</div>
+    <li key={id} className={styles.li} onClick={() => history.push(`/question/${id}`)}>
+      <div className={styles.title}>{title} {likes !== 0 ? `[${likes}]` : ''}</div>
       <div className={styles.writer}>{writer}</div>
-      <div className={styles.dated}>{dated}</div>
-      <div className={styles.hit}>{hit}</div>
+      <div className={styles.dated}>{createDate}</div>
+      <div className={styles.hit}>{views}</div>
     </li>
   )
 }

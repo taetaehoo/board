@@ -13,20 +13,13 @@ function Content() {
 
   const {Id} = useParams();
 
-    const [contents, setContents] = useState([]);
-    const [comms, setComments] = useState([]);
+    const [contents, setContents] = useState({});
+    const [comms, setComments] = useState({});
 
   useEffect(() => {
-
     axiosInstance.get(`/question/${Id}`)
-      .then(response => {
-        setContents(response.data);
-      })
-      .then(() => {
-        axiosInstance.get(`/api/posts/${Id}`)
-        .then(resp => {
-          setComments(resp.data);
-        })
+      .then(resp => {
+        setContents(resp.data);
       })
       
       .catch(error => {
@@ -36,17 +29,17 @@ function Content() {
 
   return (
     <div className={styles.contentBox}>
-      <QnAContentHeader title={contents.title} author={contents.author} dated={contents.dated} hit={contents.hit}/>
+      <QnAContentHeader title={contents.title} author={contents.writer} dated={contents.createDate} hit={contents.views}/>
 
       <hr className={styles.hr}/>
-        <QnAContentBox content={contents.content} liked={contents.likes} hashtags={contents.hashtags}/>
+        <QnAContentBox content={contents.content} liked={contents.likes} hashtags={[]}/>
 
         <hr className={styles.hr}></hr>
 
         <WriteContent id={2}/> <WriteButton id={1}/>
 
         <hr className={styles.hr}></hr>
-        <Comments comments={comms}/>
+        
     </div>
   )
 }

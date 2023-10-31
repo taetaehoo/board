@@ -6,8 +6,8 @@ function QnAContentBox({content, liked, ...hastags}) {
   return (
     <div className={styles.container}>
       <p className={styles.contentBox}>{content}</p>
-
-      <HashTagsBox likes={liked} hashtags={hastags}/>
+      
+      <HashTagsBox likes={liked} hashtags={hastags}/> 
     </div>
   )
 }
