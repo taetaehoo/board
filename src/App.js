@@ -4,6 +4,8 @@ import MainPage from './pages/MainPage';
 import QnADetailPage from './pages/QnADetailPage';
 import WritePage from './pages/writePage';
 import Header from './components/Header';
+import CodePage from './pages/CodePage';
+import CodeWritePage from './pages/CodeWritePage';
 
 function App() {
   return (
@@ -13,6 +15,8 @@ function App() {
         <Route exact path='/question' component={MainPage}></Route>
         <Route exact path='/question/add' component={WritePage}></Route>
         <Route path='/question/:Id' component={QnADetailPage}></Route>
+        <Route exact path='/codequestion' component={CodePage}></Route>
+        <Route exact path='/codequestion/add' component={CodeWritePage}></Route>
       </Switch>
     </>
   );

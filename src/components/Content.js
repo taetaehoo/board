@@ -20,6 +20,8 @@ function Content() {
     axiosInstance.get(`/question/${Id}`)
       .then(resp => {
         setContents(resp.data);
+      }).then(() => {
+        axiosInstance.get()
       })
       
       .catch(error => {

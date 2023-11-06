@@ -9,7 +9,7 @@ import WriteButton from './WriteButton'
 function Board() {
   return (
     <>
-      <Title /> <SortList /> <WriteButton id={2}/>
+      <Title id={1}/> <SortList /> <WriteButton id={2}/>
       
       <div className={styles.mainBackGround}>
         <QuestionListBox />

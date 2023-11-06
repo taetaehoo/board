@@ -17,6 +17,12 @@ function WriteButton({id, sendDataToParent}) {
       alert('글 작성이 완료되었습니다.')
       history.push(`/question`)
     }
+    else if (id === 4) {
+      history.push(`/codequestion/add`)
+    }
+    else if (id === 5) {
+      history.push('/codequestion')
+    }
   }
 
   return (
