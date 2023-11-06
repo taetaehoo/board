@@ -6,13 +6,13 @@ import SearchBar from './SearchBar'
 import Title from './Title'
 import WriteButton from './WriteButton'
 
-function Board() {
+function Board({pageId}) {
   return (
     <>
-      <Title id={1}/> <SortList /> <WriteButton id={2}/>
+      <Title pageId={pageId}/> <SortList /> <WriteButton id={pageId === 1 ? 2 : 4}/>
       
       <div className={styles.mainBackGround}>
-        <QuestionListBox />
+        <QuestionListBox pageId={pageId}/>
       </div>
 
       <SearchBar />

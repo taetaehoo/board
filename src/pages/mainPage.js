@@ -4,7 +4,7 @@ import Board from '../components/Board'
 function MainPage() {
   return (
     <>
-        <Board/>
+        <Board pageId={1}/>
     </>
   )
 }

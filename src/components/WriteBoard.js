@@ -5,13 +5,19 @@ import WriteContent from "./WriteContent";
 import ImageButton from "./ImageButton";
 import WriteButton from "./WriteButton";
 import axiosInstance from '../utils/apis';
+import CodeWriteBoard from "./CodeWriteBoard";
+import { useLocation } from "react-router-dom";
 
 function WriteBoard() {
+  const location = useLocation();
+  const path = location.pathname;
+
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
 
   const handlePostRequest = () => {
-    axiosInstance.post('/api/question', {
+    
+    axiosInstance.post(path === '/codequestion/add' ? '/api/question' : '/api/codequestion', {
       title: title,
       content: content,
       writer: "ddag"
@@ -36,7 +42,8 @@ function WriteBoard() {
       <div className={styles.Line2}></div>
       <WriteContent id={1} onTextChange={handleContentChange}/>
     </div>
-    <ImageButton/><WriteButton id={3} sendDataToParent={handlePostRequest}/>
+    {path === '/codequestion/add' ? <CodeWriteBoard /> : < ></>}
+    <ImageButton/><WriteButton id={path === '/codequestion/add' ? 5 : 3} sendDataToParent={handlePostRequest}/>
     </div>
   )
 }

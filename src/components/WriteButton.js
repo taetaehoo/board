@@ -21,6 +21,8 @@ function WriteButton({id, sendDataToParent}) {
       history.push(`/codequestion/add`)
     }
     else if (id === 5) {
+      sendDataToParent()
+      alert('글 작성이 완료되었습니다.')
       history.push('/codequestion')
     }
   }

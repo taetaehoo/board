@@ -1,12 +1,11 @@
 import React from 'react'
 import styles from '../styles/Title.module.css'
 
-const id = 1
-
-function Title() {
+function Title({pageId}) {
+  console.log(pageId)
   return (
     <div className={styles.title}>
-      {id !== 1 ? 'Q&A' : 'Code Review'}
+      {pageId === 1 ? 'Q&A' : 'Code Review'}
     </div>
   )
 }

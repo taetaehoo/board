@@ -5,7 +5,7 @@ import Content from '../components/Content'
 function QnADetailPage() {
   return (
     <>
-      <Content />
+      <Content/>
     </>
   )
 }

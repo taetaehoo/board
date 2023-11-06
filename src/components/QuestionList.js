@@ -3,12 +3,12 @@ import Question from './Question';
 import styles from '../styles/QuestionList.module.css';
 import axiosInstance from '../utils/apis';
 
-function QuestionList() {
+function QuestionList({pageId}) {
   const [contents, setContents] = useState([]);
 
   useEffect(() => {
-
-    axiosInstance.get("/question")
+    
+    axiosInstance.get(pageId === 1 ? "/question" : "/codequestion")
      .then(response => {
        setContents(response.data.content);
        console.log(response.data.content)
@@ -22,7 +22,7 @@ function QuestionList() {
   return (
     <ul className={styles.ul}>
       {contents.map(content => (
-        <Question key={content.id} {...content} />
+        <Question key={content.id} pageId={pageId} {...content}/>
       ))}
     </ul>
   );

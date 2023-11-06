@@ -21,7 +21,7 @@ const contentList = [{
 ]
 
 
-function QuestionListBox() {
+function QuestionListBox({pageId}) {
   return (
     <>
     <div className={styles.container}>
@@ -31,7 +31,7 @@ function QuestionListBox() {
 
             
     </div>
-    <QuestionList />
+    <QuestionList pageId={pageId}/>
     </>
   )
 }

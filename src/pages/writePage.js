@@ -2,7 +2,8 @@ import React from 'react'
 import WriteBoard from '../components/WriteBoard'
 import Title from '../components/Title'
 
-function writePage() {
+function WritePage() {
+
   return (
     <>
     <Title />
@@ -11,4 +12,4 @@ function writePage() {
   )
 }
 
-export default writePage
+export default WritePage
