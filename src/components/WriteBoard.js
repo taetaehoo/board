@@ -17,7 +17,7 @@ function WriteBoard() {
 
   const handlePostRequest = () => {
     
-    axiosInstance.post(path === '/codequestion/add' ? '/api/question' : '/api/codequestion', {
+    axiosInstance.post(path !== '/codequestion/add' ? '/api/question' : '/api/codequestion', {
       title: title,
       content: content,
       writer: "ddag"

@@ -21,7 +21,7 @@ const contentList = [{
 ]
 
 
-function QuestionListBox({pageId}) {
+function QuestionListBox({pageId, selectedValue, searchValue, currentPage, setTotalItem}) {
   return (
     <>
     <div className={styles.container}>
@@ -31,7 +31,7 @@ function QuestionListBox({pageId}) {
 
             
     </div>
-    <QuestionList pageId={pageId}/>
+    <QuestionList pageId={pageId} selectedValue={selectedValue} searchValue={searchValue} currentPage={currentPage} setTotalItem={setTotalItem}/>
     </>
   )
 }

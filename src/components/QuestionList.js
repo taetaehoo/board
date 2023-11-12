@@ -3,21 +3,37 @@ import Question from './Question';
 import styles from '../styles/QuestionList.module.css';
 import axiosInstance from '../utils/apis';
 
-function QuestionList({pageId}) {
+function QuestionList({pageId, selectedValue, searchValue, currentPage, setTotalItem}) {
   const [contents, setContents] = useState([]);
 
   useEffect(() => {
-    
-    axiosInstance.get(pageId === 1 ? "/question" : "/codequestion")
-     .then(response => {
-       setContents(response.data.content);
-       console.log(response.data.content)
-     })
-     
-     .catch(error => {
-       console.error('데이터를 불러오는 중 오류 발생 : ', error);
-     });
- }, []);
+    const fetchData = async () => {
+      try {
+        let tmpUrl = "";
+  
+        // 공통된 부분
+        if (searchValue === '') {
+          tmpUrl = pageId === 1 ? "/question" : "/codequestion";
+          tmpUrl += selectedValue === 1 ? "" : "ByLikes";
+          tmpUrl += currentPage === 1 ? "" : `?page=${currentPage}`;
+        } else {
+          tmpUrl = pageId === 1 ? "/question/search" : "/codequestion/search";
+          tmpUrl += `?title=${searchValue}`;
+        }
+  
+        const response = await axiosInstance.get(tmpUrl);
+        setTotalItem(response.data.totalElements);
+        setContents(response.data.content);
+      } catch (error) {
+        console.error('데이터를 불러오는 중 오류 발생 : ', error);
+      }
+    };
+  
+    fetchData();
+  
+  }, [pageId, selectedValue, searchValue, currentPage]);
+  
+
 
   return (
     <ul className={styles.ul}>

@@ -17,17 +17,17 @@ function Header() {
  
                 
                 <div className={styles.QnA_wapper}>
-                    <a className={styles.goToQnA}>
+                    <Link to="/question" className={styles.goToQnA}>
                         <span className={styles.QnA}>Q&A</span>    
-                    </a>
+                    </Link>
                 </div>
 
                 <TbMinusVertical />              
     
                 <div className={styles.Code_wapper}>
-                    <a className={styles.goToCode}>
+                    <Link to="/codequestion" className={styles.goToCode}>
                         <span className={styles.Code}>Code Review</span>    
-                    </a>
+                    </Link>
                 </div>
 
                 <TbMinusVertical />

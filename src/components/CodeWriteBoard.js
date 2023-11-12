@@ -1,37 +1,33 @@
-import React, { useState } from 'react'
-import styles from '../styles/CodeWriteBoard.module.css'
-import AceEditor from 'react-ace';
-import "ace-builds/src-noconflict/ace";
-import "ace-builds/src-noconflict/worker-json";
-import 'ace-builds/src-noconflict/mode-javascript';
-import 'ace-builds/src-min-noconflict/theme-github';
-
+import React, { useState, useEffect } from 'react';
+import styles from '../styles/CodeWriteBoard.module.css';
+import Editor, { useMonaco } from '@monaco-editor/react'
 
 function CodeWriteBoard() {
-    const [codeVal, setCodeVal] = useState('');
+  const monaco = useMonaco();
+  const [codeVal, setCodeVal] = useState('');
+  const [language, setLanguage] = useState('javascript')
+
+  const handleEditorChange = (newCode) => {
+    setCodeVal(newCode);
+  };
+
 
   return (
-    
-        <AceEditor
-            placeholder="Placeholder Text"
-            mode="javascript"
-            theme="github"
-            
-  
-            showPrintMargin={true}
-            showGutter={true}
-            highlightActiveLine={true}
-            value={codeVal}
-            onChange={value => setCodeVal(value)}
-            name="code-editor"
-            editorProps={{$blockScrolling: true}}
-            className={styles['ace-editor']}
-            setOptions={{
-                showLineNumbers: true,
-                tabSize: 2,
-  }}/>
-    
-  )
+    <div className={styles.container}>
+      <Editor
+      width='1000px'
+      height='600px'
+      language={language}
+      options={{
+        fontsize: 15,
+        minimap: {enabled: true},
+        scrollbar: {
+          vertical: 'auto',
+          horizontal: 'auto'
+        }
+      }} />
+    </div>
+  );
 }
 
-export default CodeWriteBoard
+export default CodeWriteBoard;

@@ -1,15 +1,14 @@
-.ace-editor {
-    margin: 0 auto;
-    margin-top: 2vh;
-    width: 75vw !important;
-    height: 60vh !important;
-    background-color: #f0f0f0;
-    border: 1px solid #ccc;
-    display: block;
-  }
+/* module.css */
+.container {
+  display: flex;
+  justify-content: center;
   
-  /* 에디터 내용 스타일 */
-  .ace-content {
-    font-size: 14px;
-    color: #333;
-  }
+  margin-top: 2vh;
+}
+
+.monaco {
+  width: 75vw;
+  height: 60vh;
+
+  margin: 0 auto;
+}

@@ -2,11 +2,11 @@ import React from 'react'
 import WriteBoard from '../components/WriteBoard'
 import Title from '../components/Title'
 
-function WritePage() {
+function WritePage({additionalProp}) {
 
   return (
     <>
-    <Title />
+    <Title pageId={additionalProp}/>
     <WriteBoard />
     </>
   )
