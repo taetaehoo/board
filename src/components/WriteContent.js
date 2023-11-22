@@ -4,6 +4,7 @@ import styles from '../styles/WriteContent.module.css'
 const placeHolderText = '내용을 입력해주세요.';
 
 function WriteContent({id, onTextChange}) {
+  
   const className = id === 1 ? styles.content : styles.WriteContent;
 
   const handleChange = event => {

@@ -31,7 +31,7 @@ function SearchBar({onSearch}) {
         onChange={handleInputChange}
       />
       <button type='submit' className={styles.searchBtn} onClick={handleInputClick}>검색</button>
-      <button type='submit' onClick={handleResetClick}>검색 초기화</button>
+      <button type='submit' className={styles.backBtn} onClick={handleResetClick}>검색 초기화</button>
     </div>
   )
 }

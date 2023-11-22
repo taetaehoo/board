@@ -9,7 +9,10 @@ function WriteButton({id, sendDataToParent}) {
 
 
   const locate = () => {
-    if (id === 2) {
+    if (id === 1) {
+      sendDataToParent();
+    }
+    else if (id === 2) {
       history.push(`/question/add`)
     }
     else if (id === 3) {

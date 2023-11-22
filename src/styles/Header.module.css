@@ -1,4 +1,6 @@
-img {
+.kitLogo {
+    display: flex;
+    justify-content: flex-start;
     object-fit: scale-down;
 }
 
