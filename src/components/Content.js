@@ -30,8 +30,7 @@ function Content() {
     const handlePostRequest = () => {
     
       axiosInstance.post(`/question/${Id}/comment`, {
-        content: data,
-        writer: "ddag"
+        content: data
       }).then(resp => console.log(resp))
       .catch(err => console.log(err));
     }

@@ -21,6 +21,7 @@ function WriteBoard() {
       title: title,
       content: content,
       codeContent: codeVal,
+      
     }).then(resp => console.log(resp))
     .catch(err => console.log(err));
   }

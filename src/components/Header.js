@@ -4,7 +4,7 @@ import {Link} from "react-router-dom";
 import { BsFillBellFill } from "react-icons/bs";
 import { TbMinusVertical } from "react-icons/tb";
 import kitLogo from "../image/kit_LOGO.png";
-import axios from 'axios';
+import axiosInstance from '../utils/apis'
 
 function Header() {
     
@@ -14,14 +14,25 @@ function Header() {
             loginPw: 'b1234'
     };
 
-    axios.post('http://localhost:8080/api/signin', data)
-      .then(response => {
-        console.log('Response:', response.data);
-      })
+    axiosInstance.post('/api/signin', data)
+    .then(resp => {
+        const cookies = document.cookie;
+        console.log(cookies)
+    })
       .catch(error => {
         console.error('Error:', error);
       });
   };
+
+  const handleLogOut = () => {
+    axiosInstance.post('/api/signout')
+    .then(resp => {
+        console.log(resp)
+    })
+    .catch(err => {
+        console.log(err)
+    })
+  }
 
   return (
     <div className={styles.Header}>
@@ -62,7 +73,7 @@ function Header() {
                     
                 <div className={styles.user_wapper}>
                     <button className={styles.login} onClick={handleClick} >로그인</button>
-                    <button className={styles.register} href="">회원가입</button>
+                    <button className={styles.register} onClick={handleLogOut}>회원가입</button>
                 </div>
             </div>
         </div>
