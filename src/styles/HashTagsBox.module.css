@@ -33,3 +33,15 @@
     font-size: 15px;
     font-family: 'GmarketSansMedium';
 }
+
+.likeIcon {
+    color: red;
+    font-size: 25px;
+    margin-right: 5px;
+    margin-top: 5px;
+}
+
+.likeDiv {
+    display: flex;
+    align-items: center;
+}

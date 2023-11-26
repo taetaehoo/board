@@ -16,7 +16,7 @@
 }
 
 .li:hover {
-    background-color: lavender;
+    background-color: #AAD4E0;
     transition: 0.5s;
     cursor: pointer;
 }

@@ -4,9 +4,21 @@
     margin: 10vh auto 0;
 }
 
-.btnDiv {
-    
+.pagingDiv {
+    display: flex;
+    justify-content: center;
+
+    margin-top: 3vh;
+
+    height: 5vh;
 }
 
-.goPageBtn {
+.btn {
+    width: 3vw;
+    border: none;
+
+    font-family: 'GmarketSansMedium';
+    font-size: 20px;
+
+    background-color: white;
 }

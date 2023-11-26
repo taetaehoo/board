@@ -11,11 +11,10 @@ function QuestionList({pageId, selectedValue, searchValue, currentPage, setTotal
       try {
         let tmpUrl = "";
   
-        // 공통된 부분
         if (searchValue === '') {
           tmpUrl = pageId === 1 ? "/question" : "/codequestion";
           tmpUrl += selectedValue === 1 ? "" : "ByLikes";
-          tmpUrl += currentPage === 1 ? "" : `?page=${currentPage}`;
+          tmpUrl += currentPage === 1 ? '' : `?page=${currentPage-1}`;
         } else {
           tmpUrl = pageId === 1 ? "/question/search" : "/codequestion/search";
           tmpUrl += `?title=${searchValue}`;
@@ -24,6 +23,7 @@ function QuestionList({pageId, selectedValue, searchValue, currentPage, setTotal
         const response = await axiosInstance.get(tmpUrl);
         setTotalItem(response.data.totalElements);
         setContents(response.data.content);
+        console.log(response);
       } catch (error) {
         console.error('데이터를 불러오는 중 오류 발생 : ', error);
       }
@@ -32,6 +32,10 @@ function QuestionList({pageId, selectedValue, searchValue, currentPage, setTotal
     fetchData();
   
   }, [pageId, selectedValue, searchValue, currentPage]);
+
+  useEffect(() => {
+    console.log(currentPage)
+  }, [currentPage])
   
 
 

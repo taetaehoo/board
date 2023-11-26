@@ -46,7 +46,7 @@ function Board({pageId}) {
   }, [totalItem])
 
   const generatePageNumbers = () => {
-    const maxButtonsToShow = 5; // Adjust this based on your design preference
+    const maxButtonsToShow = 5;
     const buttons = [];
 
     const start = Math.max(1, currentPage - Math.floor(maxButtonsToShow / 2));
@@ -54,7 +54,7 @@ function Board({pageId}) {
 
     for (let i = start; i <= end; i++) {
       buttons.push(
-        <button key={i} onClick={() => handlePageChange(i)} disabled={i === currentPage}>
+        <button className={styles.btn} key={i} onClick={() => handlePageChange(i)} disabled={i === currentPage}>
           {i}
         </button>
       );
@@ -71,16 +71,16 @@ function Board({pageId}) {
         <QuestionListBox pageId={pageId} selectedValue={selectedSort} searchValue={searchTermFromSearchBar} currentPage={currentPage} setTotalItem={setTotalItem}/>
       </div>
 
-      <div>
-        <button onClick={() => goPage(1)}>(1)</button>
-        <button onClick={() => handlePageChange(currentPage - 1)} disabled={currentPage === 1}>
-          Previous
+      <div className={styles.pagingDiv}>
+        <button className={styles.btn} onClick={() => goPage(1)}>&lt;&lt;</button>
+        <button className={styles.btn} onClick={() => handlePageChange(currentPage - 1)} disabled={currentPage === 1}>
+          &lt;
         </button>
         {generatePageNumbers()}
-        <button onClick={() => handlePageChange(currentPage + 1)} disabled={currentPage === totalPages}>
-          Next
+        <button className={styles.btn} onClick={() => handlePageChange(currentPage + 1)} disabled={currentPage === totalPages}>
+          &gt;
         </button>
-        <button onClick={() => goPage(totalPage)}>({totalPage})</button>
+        <button className={styles.btn} onClick={() => goPage(totalPage)}>&gt;&gt;</button>
       </div>
 
       <SearchBar onSearch={handleSearch}/>

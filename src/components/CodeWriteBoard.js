@@ -2,13 +2,13 @@ import React, { useState, useEffect } from 'react';
 import styles from '../styles/CodeWriteBoard.module.css';
 import Editor, { useMonaco } from '@monaco-editor/react'
 
-function CodeWriteBoard() {
+function CodeWriteBoard({handleCodeChange}) {
   const monaco = useMonaco();
-  const [codeVal, setCodeVal] = useState('');
+  
   const [language, setLanguage] = useState('javascript')
 
   const handleEditorChange = (newCode) => {
-    setCodeVal(newCode);
+    handleCodeChange(newCode);
   };
 
 
@@ -18,6 +18,7 @@ function CodeWriteBoard() {
       width='1000px'
       height='600px'
       language={language}
+      onChange={handleEditorChange}
       options={{
         fontsize: 15,
         minimap: {enabled: true},

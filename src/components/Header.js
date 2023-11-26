@@ -4,8 +4,26 @@ import {Link} from "react-router-dom";
 import { BsFillBellFill } from "react-icons/bs";
 import { TbMinusVertical } from "react-icons/tb";
 import kitLogo from "../image/kit_LOGO.png";
+import { useState } from 'react';
+import axios from 'axios';
 
 function Header() {
+    
+    const handleClick = () => {
+        const data = {
+            loginId: 'b1234@kumoh.ac.kr',
+            loginPw: 'b1234'
+    };
+
+    axios.post('http://localhost:8080/api/signin', data)
+      .then(response => {
+        console.log('Response:', response.data);
+      })
+      .catch(error => {
+        console.error('Error:', error);
+      });
+  };
+
   return (
     <div className={styles.Header}>
             <div className={styles.header_wapper}>
@@ -53,7 +71,7 @@ function Header() {
                 </div>
                     
                 <div className={styles.user_wapper}>
-                    <button className={styles.login} href="">로그인</button>
+                    <button className={styles.login} onClick={handleClick} >로그인</button>
                     <button className={styles.register} href="">회원가입</button>
                 </div>
             </div>

@@ -6,8 +6,8 @@ import { IoHeart } from "react-icons/io5";
 import ReComment from './ReComment';
 import { MdOutlineSubdirectoryArrowRight } from "react-icons/md";
 
-function Comments({ comments }) {
-    
+function CodeComments({ comments }) {
+    console.log(comments)
   const [clickedComments, setClickedComments] = useState({});
   const [clickedReComms, setClickedReComms] = useState({});
 
@@ -33,21 +33,23 @@ function Comments({ comments }) {
       return [];
     }
     return commentList.map(comment => (
-      <div key={comment.question_comment_id} className={comment.parent_id === null ? styles.commentBox : styles.commentBox2}>
+      <div key={comment.code_question_comment_id} className={comment.parent_id === null ? styles.commentBox : styles.commentBox2}>
         <div className={styles.commentBoxContent}>
           <p className={styles.pTag1}>{comment.writer}</p>
           <p className={styles.pTag2}>{comment.createdate}</p>
-          <p className={styles.commentIcon} onClick={() => toggleReComment(comment.question_comment_id)}>
+          <p className={styles.commentIcon} onClick={() => toggleReComment(comment.code_question_comment_id)}>
             <TfiComment />
           </p>
-          <p className={styles.likeIcon} onClick={() => toggleLike(comment.question_comment_id)}>
-            {clickedComments[comment.question_comment_id] ? <IoHeart /> : <IoIosHeartEmpty />}
+          <p className={styles.likeIcon} onClick={() => toggleLike(comment.code_question_comment_id)}>
+            {clickedComments[comment.code_question_comment_id] ? <IoHeart /> : <IoIosHeartEmpty />}
           </p>
           <p className={styles.liked}>{comment.likes}</p>
         </div>
         <p className={styles.pTag3}>{comment.content}</p>
-        
-        {clickedReComms[comment.question_comment_id] ? <ReComment question_comment_id={comment.question_comment_id}/> : <></>}
+        {comment.codeContent ? (
+  <code>{comment.codeContent}</code>
+) : null}
+        {clickedReComms[comment.code_question_comment_id] ? <ReComment question_comment_id={comment.code_question_comment_id}/> : <></>}
         {comment.childComments && comment.childComments.length > 0 && (
           <div className={styles.childComments}>
             <MdOutlineSubdirectoryArrowRight />
@@ -66,4 +68,4 @@ function Comments({ comments }) {
   );
 }
 
-export default Comments;
+export default CodeComments;

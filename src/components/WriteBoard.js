@@ -14,12 +14,14 @@ function WriteBoard() {
 
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
+  const [codeVal, setCodeVal] = useState('');
 
   const handlePostRequest = () => {
     
-    axiosInstance.post(path !== '/codequestion/add' ? '/question' : '/codequestion', {
+    axiosInstance.post(path !== '/codequestion/add' ? '/api/question' : '/api/codequestion', {
       title: title,
       content: content,
+      codeContent: codeVal,
       writer: "ddag"
     }).then(resp => console.log(resp))
     .catch(err => console.log(err));
@@ -33,6 +35,14 @@ function WriteBoard() {
     setContent(newText);
   }
 
+  const handleCodeChange = newCode => {
+    setCodeVal(newCode);
+  }
+
+  useEffect(() => {
+    console.log(codeVal)
+  }, [codeVal])
+
 
   return(
     <div className={styles.container}>
@@ -42,8 +52,8 @@ function WriteBoard() {
       <div className={styles.Line2}></div>
       <WriteContent id={1} onTextChange={handleContentChange}/>
     </div>
-    {path === '/codequestion/add' ? <CodeWriteBoard /> : < ></>}
-    <ImageButton/><WriteButton id={path === '/codequestion/add' ? 5 : 3} sendDataToParent={handlePostRequest}/>
+    {path === '/codequestion/add' ? <CodeWriteBoard handleCodeChange={handleCodeChange}/> : < ></>}
+    <WriteButton id={path === '/codequestion/add' ? 5 : 3} sendDataToParent={handlePostRequest}/>
     </div>
   )
 }

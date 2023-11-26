@@ -11,6 +11,8 @@
     margin: 1vh 0;
     margin-left: 5vw;
     border: none;
+
+    height: 100%;
 }
 
 .pTag1 {
@@ -43,6 +45,31 @@
     display: inline;
 
     font-family: 'GmarketSansLight';
-    font-size: 14px;
-    padding-left: 1vw;
+    font-size: 17px;
+}
+
+.likeIcon {
+    color: red;
+    font-size: 25px;
+    margin-right: 5px;
+    margin-top: 5px;
+}
+
+.likeIcon:hover {
+    cursor: pointer;
+}
+
+.commentBoxContent {
+    display: flex;
+    align-items: center;
+}
+.commentIcon {
+    font-size: 20px;
+    margin-left: 1vw;
+    margin-right: 5px;
+    margin-top: 5px;
+}
+
+.commentIcon:hover {
+    cursor: pointer;
 }
