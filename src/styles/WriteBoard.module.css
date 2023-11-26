@@ -5,8 +5,11 @@
 .WriteBoard {
   width: 80vw;
   height: 100%;
-  margin: 5vh auto;
+  
+  margin: 0 auto;
+
   margin-top: 1vh;
+  margin-bottom: 1vh;
 
   border: none;
 }
@@ -35,6 +38,5 @@
   display: inline-block;
 
   width: 10vw;
-  margin-top: 3vh;
   margin-left: 73vw;
 }

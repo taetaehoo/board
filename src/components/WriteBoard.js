@@ -14,16 +14,13 @@ function WriteBoard() {
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
   const [codeVal, setCodeVal] = useState('');
-
-  sessionStorage.setItem('writer', 'writer');
-
+  
   const handlePostRequest = () => {
     
     axiosInstance.post(path !== '/codequestion/add' ? '/api/question' : '/api/codequestion', {
       title: title,
       content: content,
       codeContent: codeVal,
-      writer: sessionStorage.getItem('writer')
     }).then(resp => console.log(resp))
     .catch(err => console.log(err));
   }

@@ -4,7 +4,6 @@ import {Link} from "react-router-dom";
 import { BsFillBellFill } from "react-icons/bs";
 import { TbMinusVertical } from "react-icons/tb";
 import kitLogo from "../image/kit_LOGO.png";
-import { useState } from 'react';
 import axios from 'axios';
 
 function Header() {
@@ -47,15 +46,6 @@ function Header() {
                         <span className={styles.Code}>Code Review</span>    
                     </Link>
                 </div>
-
-                <TbMinusVertical />
-
-                <div className={styles.tag_wapper}>
-                    <a className={styles.goToTag}>
-                        <span className={styles.tag}>Tag</span>    
-                    </a>    
-                </div>
-                
                 
                 <div className={styles.alarm_wapper}>
                     <div className={styles.alarm}>
