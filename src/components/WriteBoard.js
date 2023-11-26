@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import styles from '../styles/WriteBoard.module.css'
 import WriteTitle from "./WriteTitle";
 import WriteContent from "./WriteContent";
-import ImageButton from "./ImageButton";
 import WriteButton from "./WriteButton";
 import axiosInstance from '../utils/apis';
 import CodeWriteBoard from "./CodeWriteBoard";
@@ -16,13 +15,15 @@ function WriteBoard() {
   const [content, setContent] = useState('');
   const [codeVal, setCodeVal] = useState('');
 
+  sessionStorage.setItem('writer', 'writer');
+
   const handlePostRequest = () => {
     
     axiosInstance.post(path !== '/codequestion/add' ? '/api/question' : '/api/codequestion', {
       title: title,
       content: content,
       codeContent: codeVal,
-      writer: "ddag"
+      writer: sessionStorage.getItem('writer')
     }).then(resp => console.log(resp))
     .catch(err => console.log(err));
   }
@@ -53,7 +54,10 @@ function WriteBoard() {
       <WriteContent id={1} onTextChange={handleContentChange}/>
     </div>
     {path === '/codequestion/add' ? <CodeWriteBoard handleCodeChange={handleCodeChange}/> : < ></>}
-    <WriteButton id={path === '/codequestion/add' ? 5 : 3} sendDataToParent={handlePostRequest}/>
+    <div>
+      <div className={styles.didiv}></div>
+      <WriteButton id={path === '/codequestion/add' ? 5 : 3} sendDataToParent={handlePostRequest}/>
+    </div>
     </div>
   )
 }
