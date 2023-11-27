@@ -63,7 +63,7 @@ function Content() {
       <hr className={styles.hr}/>
         <QnAContentBox content={contents.content} liked={contents.likes} hashtags={[]}/>
 
-        <UpdateButton id={Id} pageId={1}/> <DeleteButton id={Id} pageId={1}/>
+        <UpdateButton className={styles.upBtn} id={Id} pageId={1}/> <DeleteButton id={Id} pageId={1}/>
 
         <hr className={styles.hr}></hr>
 

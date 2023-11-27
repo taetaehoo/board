@@ -1,0 +1,20 @@
+.delBtn {
+  display: inline-block;
+  border: none;
+
+  margin-left: 75vw;
+}
+
+.delText {
+  margin-top: 1vh;
+  margin-left: 70vw;
+
+  font-size: 15px;
+}
+
+.btnDiv {
+  display: flex;
+  justify-content: right;
+
+  margin-right: 1vw;
+}

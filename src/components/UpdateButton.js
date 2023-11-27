@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom/cjs/react-router-dom.min'
 function UpdateButton({id, pageId}) {
   
   return (
-    <button>
+    <button className={styles.upBtn}>
       <Link to={pageId === 1 ? `/question/update/${id}` : `/codequestion/update/${id}`}>게시글 수정</Link>
     </button>
   )

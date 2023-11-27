@@ -65,10 +65,10 @@ function CodeDetail({comment}) {
       <QnAContentHeader title={contents.title} author={contents.writer} dated={contents.createDate} hit={contents.views}/>
 
       <hr className={styles.hr}/>
+
         <QnAContentBox content={contents.content} liked={contents.likes} hashtags={[]}/>
 
-        <code>{codeVal}</code>
-        <hr></hr>
+        <code className={styles.codeBox}>{codeVal}</code>
 
         <UpdateButton id={Id} pageId={2}/> <DeleteButton id={Id} pageId={2}/>
 

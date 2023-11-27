@@ -15,3 +15,14 @@
 
     margin: 1vh 0;
 }
+
+.codeBox {
+    display: flex;
+
+    margin-top: 2vh;
+    margin-left: 2vw;
+
+
+    font-size: 15px;
+    font-family: 'GMarketSansMedium';
+}

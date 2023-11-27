@@ -26,11 +26,11 @@ function DeleteButton({id, pageId}) {
 
   return (
     <div>
-      <button onClick={toggleModal}>게시물 삭제</button>
+      <button className={styles.delBtn} onClick={toggleModal}>게시글 삭제</button>
       {showModal && (
-        <div className="modal">
-          <div className="modal-content">
+        <div className={styles.delText}>
             정말 삭제하시겠습니까?
+            <div className={styles.btnDiv}>
             <button onClick={clickConfirm}>삭제</button>
             <button onClick={toggleModal}>취소</button>
           </div>

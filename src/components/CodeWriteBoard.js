@@ -15,8 +15,8 @@ function CodeWriteBoard({handleCodeChange}) {
   return (
     <div className={styles.container}>
       <Editor
-      width='1000px'
-      height='600px'
+      width='83vw'
+      height='35vh'
       language={language}
       onChange={handleEditorChange}
       options={{
