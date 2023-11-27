@@ -125,8 +125,10 @@ function CodeDetail({comment}) {
       <CodeComments comments={comms} primaryCode={codeVal}/>
 
       {/* 페이지 이동 버튼 */}
-        <button onClick={goToPreviousPage} disabled={currentPage === 1}>Previous Page</button>
-        <button onClick={goToNextPage} disabled={currentPage === totalPages}>Next Page</button>
+      <div className={styles.pagingDiv}>
+        <button className={styles.btn} onClick={goToPreviousPage} disabled={currentPage === 1}>&lt;</button>
+        <button className={styles.btn} onClick={goToNextPage} disabled={currentPage === totalPages}>&gt;</button>
+      </div>
     </div>
     </div>
   )

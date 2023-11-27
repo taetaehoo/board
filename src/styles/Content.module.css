@@ -26,3 +26,22 @@
     font-size: 15px;
     font-family: 'GMarketSansMedium';
 }
+
+.btn {
+    width: 3vw;
+    border: none;
+
+    font-family: 'GmarketSansMedium';
+    font-size: 20px;
+
+    background-color: white;
+}
+
+.pagingDiv {
+    display: flex;
+    justify-content: center;
+
+    margin-top: 3vh;
+
+    height: 5vh;
+}

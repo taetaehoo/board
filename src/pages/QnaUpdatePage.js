@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useHistory, useParams } from 'react-router-dom/cjs/react-router-dom.min'
 import axiosInstance from '../utils/apis'
+import styles from '../styles/QnaUpdatePage.module.css'
 
 
 function QnaUpdatePage() {
@@ -50,14 +51,14 @@ function QnaUpdatePage() {
   return (
     <>
       <div>
-        <textarea value={title} onChange={onChangeTitle}></textarea>
+        <textarea className={styles.titleBox} value={title} onChange={onChangeTitle}></textarea>
       </div>
       <hr />
       <div>
-        <textarea value={content} onChange={onChangeContent}></textarea>
+        <textarea className={styles.contentBox} value={content} onChange={onChangeContent}></textarea>
       </div>
 
-      <button onClick={onClickConfirm}>수정</button>
+      <button className={styles.upBtn} onClick={onClickConfirm}>수정</button>
     </>
   )
 }

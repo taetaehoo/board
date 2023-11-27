@@ -15,8 +15,8 @@ const modalStyles = {
     left: "0",
   },
   content: {
-    width: "360px",
-    height: "180px",
+    width: "400px",
+    height: "300px",
     zIndex: "150",
     position: "absolute",
     top: "50%",
@@ -109,50 +109,50 @@ function Popup({ isWriterDec = false, isQnaCon = false, isQnaComm = false, isCod
     if (isWriterDec)
       return (
       <>
-        <p>작성자 신고</p>
-        <textarea value={title} onChange={handleTitle}></textarea>
-        <textarea value={content} onChange={handleChange}></textarea>
+        <p className={styles.textBox}>작성자 신고</p>
+        <textarea className={styles.title} value={title} onChange={handleTitle}></textarea>
+        <textarea className={styles.content} value={content} onChange={handleChange}></textarea>
 
-        <button onClick={handleWriterDec}>신고</button>
+        <button className={styles.btn} onClick={handleWriterDec}>신고</button>
       </>
       )
 
     else if (isQnaCon)
         return (
       <>
-        <p>QnA 게시물 신고</p>
-        <textarea value={title} onChange={handleTitle}></textarea>
-    <textarea value={content} onChange={handleChange}></textarea>
-        <button onClick={handleQnaConDec}>신고</button>
+        <p className={styles.textBox}>QnA 게시물 신고</p>
+        <textarea className={styles.title} value={title} onChange={handleTitle}></textarea>
+    <textarea className={styles.content} value={content} onChange={handleChange}></textarea>
+        <button className={styles.btn} onClick={handleQnaConDec}>신고</button>
       </>
           )
     else if (isQnaComm)
           return (
       <>
-        <p>QnA 댓글 신고</p>
-        <textarea value={title} onChange={handleTitle}></textarea>
-    <textarea value={content} onChange={handleChange}></textarea>
-        <button onClick={handleQnaCommDec}>신고</button>
+        <p className={styles.textBox}>QnA 댓글 신고</p>
+        <textarea className={styles.title} value={title} onChange={handleTitle}></textarea>
+    <textarea className={styles.content} value={content} onChange={handleChange}></textarea>
+        <button className={styles.btn} onClick={handleQnaCommDec}>신고</button>
       </>
             )
 
     else if (isCodeCon)
             return (
           <>
-          <p>Code Review 게시물 신고</p>
-          <textarea value={title} onChange={handleTitle}></textarea>
-    <textarea value={content} onChange={handleChange}></textarea>
-          <button onClick={handleCodeConDec}>신고</button>
+          <p className={styles.textBox}>Code Review 게시물 신고</p>
+          <textarea className={styles.title} value={title} onChange={handleTitle}></textarea>
+    <textarea className={styles.content} value={content} onChange={handleChange}></textarea>
+          <button className={styles.btn} onClick={handleCodeConDec}>신고</button>
           </>
           )
 
     else if (isCodeComm)
               return(
             <>
-              <p>Code Review 댓글 신고</p>
-              <textarea value={title} onChange={handleTitle}></textarea>
-              <textarea value={content} onChange={handleChange}></textarea>
-              <button onClick={handleCodeCommDec}>신고</button>
+              <p className={styles.textBox}>Code Review 댓글 신고</p>
+              <textarea className={styles.title} value={title} onChange={handleTitle}></textarea>
+              <textarea className={styles.content} value={content} onChange={handleChange}></textarea>
+              <button className={styles.btn} onClick={handleCodeCommDec}>신고</button>
             </>
             )
     else
