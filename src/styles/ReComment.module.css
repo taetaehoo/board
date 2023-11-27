@@ -11,3 +11,9 @@
   border: 1px solid blue;
   display: block;
 }
+
+.btn {
+  height: 17vh;
+
+  margin-top: 1vh;
+}

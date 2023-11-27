@@ -6,9 +6,11 @@ import WriteButton from "./WriteButton";
 import axiosInstance from '../utils/apis';
 import CodeWriteBoard from "./CodeWriteBoard";
 import { useLocation } from "react-router-dom";
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
 function WriteBoard() {
   const location = useLocation();
+  const history = useHistory();
   const path = location.pathname;
 
   const [title, setTitle] = useState('');
@@ -38,9 +40,7 @@ function WriteBoard() {
     setCodeVal(newCode);
   }
 
-  useEffect(() => {
-    console.log(codeVal)
-  }, [codeVal])
+  
 
 
   return(

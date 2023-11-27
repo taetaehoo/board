@@ -41,9 +41,7 @@ function Board({pageId}) {
     setCurrentPage(pageNum);
   }
 
-  useEffect(() => {
-    console.log(totalItem)
-  }, [totalItem])
+  
 
   const generatePageNumbers = () => {
     const maxButtonsToShow = 5;

@@ -11,6 +11,7 @@ function WriteButton({id, sendDataToParent}) {
   const locate = () => {
     if (id === 1) {
       sendDataToParent();
+      alert('댓글 등록 완료')
     }
     else if (id === 2) {
       history.push(`/question/add`)

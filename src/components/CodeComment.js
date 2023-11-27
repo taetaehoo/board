@@ -5,9 +5,11 @@ import { TfiComment } from "react-icons/tfi";
 import { IoHeart } from "react-icons/io5";
 import ReComment from './ReComment';
 import { MdOutlineSubdirectoryArrowRight } from "react-icons/md";
+import Popup from './Popup';
+import DifferenceHighlighter from '../utils/DifferenceHighlighter';
 
-function CodeComments({ comments }) {
-    console.log(comments)
+function CodeComments({ comments, primaryCode }) {
+  
   const [clickedComments, setClickedComments] = useState({});
   const [clickedReComms, setClickedReComms] = useState({});
 
@@ -17,7 +19,6 @@ function CodeComments({ comments }) {
       [commentId]: !prevState[commentId],
 
     }));
-    console.log(clickedComments[commentId])
   };
 
   const toggleReComment = commentId => {
@@ -29,7 +30,6 @@ function CodeComments({ comments }) {
 
   const renderComments = (commentList) => {
     if (!Array.isArray(commentList)) {
-      // commentList가 배열이 아니면 빈 배열로 처리하여 렌더링 에러를 방지합니다.
       return [];
     }
     return commentList.map(comment => (
@@ -46,8 +46,9 @@ function CodeComments({ comments }) {
           <p className={styles.liked}>{comment.likes}</p>
         </div>
         <p className={styles.pTag3}>{comment.content}</p>
+        <Popup isCodeComm={true} writer={comment.writer}/>
         {comment.codeContent ? (
-  <code>{comment.codeContent}</code>
+          <DifferenceHighlighter original={primaryCode} modified={comment.codeContent}/>
 ) : null}
         {clickedReComms[comment.code_question_comment_id] ? <ReComment question_comment_id={comment.code_question_comment_id}/> : <></>}
         {comment.childComments && comment.childComments.length > 0 && (
@@ -62,8 +63,8 @@ function CodeComments({ comments }) {
 
   return (
     <div>
-      <p className={styles.lenTag}>댓글 [{comments.length}]</p>
-      {renderComments(comments)}
+      <p className={styles.lenTag}>댓글 [{comments.totalElements}]</p>
+      {renderComments(comments.content)}
     </div>
   );
 }

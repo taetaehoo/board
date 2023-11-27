@@ -3,6 +3,10 @@
   height: 100%;
 
   margin: 0 auto;
-  border-bottom: 1px solid black;
-  margin-bottom: 1vh;
+  margin-top: 3vh;
+  margin-bottom: 3vh;
+
+  font-size: 20px;
+  font-family: 'GMarketSansMedium';
 }
+

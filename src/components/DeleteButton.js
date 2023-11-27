@@ -17,7 +17,7 @@ function DeleteButton({id, pageId}) {
     axiosInstance.delete(pageId === 1 ? `/api/question/${id}` : `/api/codequestion/${id}`)
     .then(resp => {
       console.log(resp)
-      history.push('/question')
+      history.push(pageId === 1 ?'/question':'/codequestion')
     })
     .catch(err => {
       console.log(err);

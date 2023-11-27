@@ -1,0 +1,9 @@
+.siren {
+  width: 20px;
+  height: 20px;
+  color: red;
+}
+
+.siren:hover {
+  cursor: pointer;
+}

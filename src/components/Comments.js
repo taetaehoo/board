@@ -5,9 +5,9 @@ import { TfiComment } from "react-icons/tfi";
 import { IoHeart } from "react-icons/io5";
 import ReComment from './ReComment';
 import { MdOutlineSubdirectoryArrowRight } from "react-icons/md";
+import Popup from './Popup';
 
 function Comments({ comments }) {
-    
   const [clickedComments, setClickedComments] = useState({});
   const [clickedReComms, setClickedReComms] = useState({});
 
@@ -46,7 +46,7 @@ function Comments({ comments }) {
           <p className={styles.liked}>{comment.likes}</p>
         </div>
         <p className={styles.pTag3}>{comment.content}</p>
-        
+        <Popup isQnaComm={true} writer={comment.writer}/>
         {clickedReComms[comment.question_comment_id] ? <ReComment question_comment_id={comment.question_comment_id}/> : <></>}
         {comment.childComments && comment.childComments.length > 0 && (
           <div className={styles.childComments}>
@@ -60,8 +60,8 @@ function Comments({ comments }) {
 
   return (
     <div>
-      <p className={styles.lenTag}>댓글 [{comments.length}]</p>
-      {renderComments(comments)}
+      <p className={styles.lenTag}>댓글 [{comments.totalElements}]</p>
+      {renderComments(comments.content)}
     </div>
   );
 }
